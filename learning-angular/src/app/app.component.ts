@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'learning-angular';
 }
 
-
+/*
 let name: string;
 
 name = 'Peter';
@@ -55,3 +55,4 @@ class ContentList{
     return ++ContentList.contentCount;
   }
 }
+*/
