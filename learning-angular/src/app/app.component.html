@@ -1,1 +1,1 @@
-<app-content-card></app-content-card>
+<app-content-list *ngFor="let specificContent of contentList; last as isLast" [content]="specificContent" [class.is-last]="isLast"></app-content-list>
