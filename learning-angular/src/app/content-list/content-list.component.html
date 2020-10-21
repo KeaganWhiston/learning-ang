@@ -1,9 +1,12 @@
 
-<div class="content-{{content.id}}">
-  <div class="title">Title: {{content.title}}</div>
-  <div class="author">Author: {{content.author}}</div>
-  <div class="body">Body: {{content.body}}</div>
-  <div class="type" *ngIf="content.type">Type: {{content.type}}</div>
-  <div class="tag" *ngIf="content.tags">Tags: {{content.tags}}</div>
-  <img class="main-image" src="{{content.imageUrl}}" *ngIf="content.imageUrl" (click)="myFunction()">
-</div>
+<input type="text" [(ngModel)]="title" />
+<button (click)="exists()">Check if it exists</button>
+
+<h1>Action</h1>
+<app-content-card class="action" *ngFor="let item of (contentList | tagFilter: 'action')" [content]="item"></app-content-card>
+
+<h1>Horror</h1>
+<app-content-card class="horror" *ngFor="let item of (contentList | tagFilter: 'horror')" [content]="item"></app-content-card>
+
+<h1>RPG</h1>
+<app-content-card class="rpg" *ngFor="let item of (contentList | tagFilter: 'rpg')" [content]="item"></app-content-card>

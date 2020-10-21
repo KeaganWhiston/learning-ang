@@ -1,22 +1,15 @@
-:host{
-  width: 600px;
-  display: block;
-  margin: 30px auto;
-  border: 2px darkred double;
-  font-family: "Bell Gothic Std Black";
-}
-
-:host.is-last{
-  border: 2px black solid;
-}
-
-.main-image{
-  width: 600px;
-}
-
-.title{
-  font-size: 30px;
+h1{
   text-align: center;
-
 }
 
+.rpg{
+  border: 2px blue double;
+}
+
+.horror{
+  border: 8px green dashed;
+}
+
+.action{
+  border: 6px yellow dashed;
+}

@@ -1,3 +1,9 @@
 
-<p>content-card works!</p>
-
+<div class="content-{{content.id}}">
+  <div class="title">Title: {{content.title}}</div>
+  <div class="author">Author: {{content.author}}</div>
+  <div class="body">Body: {{content.body}}</div>
+  <div class="type" *ngIf="content.type">Type: {{content.type}}</div>
+  <div class="tag" *ngIf="content.tags">Tags: {{content.tags}}</div>
+  <img class="main-image" src="{{content.imageUrl}}" *ngIf="content.imageUrl" (click)="myFunction()">
+</div>
