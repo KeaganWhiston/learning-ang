@@ -3,7 +3,7 @@
   display: block;
   margin: 30px auto;
   border: 2px darkred double;
-  font-family: "Bell Gothic Std Black";
+  //font-family: "Bell Gothic Std Black";
 }
 
 :host.is-last{
@@ -20,3 +20,6 @@
 
 }
 
+.tag{
+  display: inline-block;
+}

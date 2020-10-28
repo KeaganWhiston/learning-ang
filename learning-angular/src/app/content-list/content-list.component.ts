@@ -55,8 +55,8 @@ export class ContentListComponent implements OnInit {
       title: 'Phasmophobia',
       body: 'Phasmophobia is a 4 player online co-op psychological horror where you and your team members of paranormal investigators will enter haunted locations filled with paranormal activity and gather as much evidence of the paranormal as you can.',
       type: 'game',
-      tags: ['horror', 'coop'],
-      imageUrl: 'https://cdn.cloudflare.steamstatic.com/steam/apps/739630/capsule_616x353.jpg?t=1602270061'
+      tags: ['horror', 'coop']
+      // imageUrl: 'https://cdn.cloudflare.steamstatic.com/steam/apps/739630/capsule_616x353.jpg?t=1602270061'
     }];
   }
   ngOnInit(): void {
