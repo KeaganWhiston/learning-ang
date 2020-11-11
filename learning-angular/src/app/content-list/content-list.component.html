@@ -1,12 +1,18 @@
 
-<input type="text" [(ngModel)]="title" />
-<button (click)="exists()">Check if it exists</button>
+<!--<input type="text" [(ngModel)]="title" />-->
+<!--<button (click)="exists()">Check if it exists</button>-->
+<app-create-content (newGameEvent)="addGameToList($event)"></app-create-content>
+<hr>
 
-<h1>Action</h1>
-<app-content-card class="action" *ngFor="let item of (contentList | tagFilter: 'action')" [content]="item"></app-content-card>
+<!--<h1>Action</h1>-->
+<!--<app-content-card class="action" *ngFor="let item of (contentList | tagFilter: 'action')" [content]="item"></app-content-card>-->
 
-<h1>Horror</h1>
-<app-content-card class="horror" *ngFor="let item of (contentList | tagFilter: 'horror')" [content]="item"></app-content-card>
+<!--<h1>Horror</h1>-->
+<!--<app-content-card class="horror" *ngFor="let item of (contentList | tagFilter: 'horror')" [content]="item"></app-content-card>-->
 
-<h1>RPG</h1>
-<app-content-card class="rpg" *ngFor="let item of (contentList | tagFilter: 'rpg')" [content]="item"></app-content-card>
+<!--<h1>RPG</h1>-->
+<!--<app-content-card class="rpg" *ngFor="let item of (contentList | tagFilter: 'rpg')" [content]="item"></app-content-card>-->
+
+<h1>All</h1>
+<app-content-card class="rpg" *ngFor="let item of contentList" [content]="item"></app-content-card>
+

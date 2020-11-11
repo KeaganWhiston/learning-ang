@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {Content} from '../helper-files/content-interface';
 
@@ -10,8 +10,7 @@ import {Content} from '../helper-files/content-interface';
 })
 export class ContentCardComponent implements OnInit {
   @Input() content: Content
-  constructor() {
-  }
+  constructor() {}
   ngOnInit(): void {
   }
   myFunction(): void {
