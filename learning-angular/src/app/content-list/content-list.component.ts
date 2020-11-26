@@ -19,9 +19,8 @@ export class ContentListComponent implements OnInit {
   }
   ngOnInit(): void {
     // this.contentList = this.contentService.getContent();
-    this.contentService.getContentObs().subscribe(cl => {
-      this.contentList = cl;
-    });
+    this.contentList = [];
+    this.getTheContentList();
   }
 
 
@@ -33,5 +32,22 @@ export class ContentListComponent implements OnInit {
         console.log('exists');
       }
     }
+  }
+  addContentToList(content: Content): void {
+    this.contentList.push(content);
+    // We need to clone the array for the pipe to work
+    this.contentList = Object.assign([], this.contentList);
+  }
+  updateTheList(message: string): void{
+    console.log(message);
+    this.getTheContentList();
+  }
+
+  getTheContentList(): void{
+    this.contentService.getContent().subscribe(cl => {
+      // content came back, log length
+      this.contentList = cl;
+      console.log(cl.length);
+    });
   }
 }

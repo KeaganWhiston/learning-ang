@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import {Content} from '../helper-files/content-interface';
-import {CONTENTLIST} from '../helper-files/ContentDB';
-import {Observable, of} from 'rxjs';
-import {MessageService} from '../message.service';
 
+import {Observable} from 'rxjs';
+
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
-
-  constructor(private messageService: MessageService) { }
-  getContent(): Content[]{ // synchronous
-    return CONTENTLIST;
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type':
+        'application/json' })
+  };
+  constructor(private http: HttpClient) { }
+  getContent(): Observable<Content[]>{
+    return this.http.get<Content[]>('api/content');
   }
-  getContentObs(): Observable<Content[]>{ // asynchronous
-    this.messageService.add('Content Retrieved');
-    return of(CONTENTLIST);
+  addContent(content: Content): Observable<Content>{
+    return this.http.post<Content>('api/content', content, this.httpOptions);
+  }
+  updateContent(content: Content): Observable<any>{
+    return this.http.put<Content>('api/content', content, this.httpOptions);
   }
 }
